@@ -83,6 +83,7 @@
                 }
                 elseif($row['STATUS']==0){
                     $_SESSION['login']="<div class='text-danger'>Tài khoản chưa được kích hoạt</div>";
+                    $_SESSION["user"] = $email;
                     header("Location: login.php");
                 }
                 
