@@ -78,12 +78,12 @@
                 if(password_verify($pass, $pass_saved) AND $row['STATUS']==1){
                     //nếu khớp thì > login thành công > chuyenr vào trang index
                     //cấp thẻ bài
+                    $_SESSION["user"] = $email;
                     $_SESSION['login_success'] = "true";
                     header("Location: index.php");
                 }
                 elseif($row['STATUS']==0){
                     $_SESSION['login']="<div class='text-danger'>Tài khoản chưa được kích hoạt</div>";
-                    $_SESSION["user"] = $email;
                     header("Location: login.php");
                 }
                 
